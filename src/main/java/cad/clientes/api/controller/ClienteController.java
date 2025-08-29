@@ -1,9 +1,6 @@
 package cad.clientes.api.controller;
 
-import cad.clientes.api.domain.cliente.Cliente;
-import cad.clientes.api.domain.cliente.ClienteRepository;
-import cad.clientes.api.domain.cliente.DadosCadastroCliente;
-import cad.clientes.api.domain.cliente.DadosDetalhamentoCliente;
+import cad.clientes.api.domain.cliente.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +23,13 @@ public class ClienteController {
         var uri = uriBuilder.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoCliente(cliente));
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados) {
+        var cliente = repository.getReferenceById(dados.id());
+        cliente.atualizarInformacoes(dados);
+        return ResponseEntity.ok(new DadosDetalhamentoCliente(cliente));
     }
 }

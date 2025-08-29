@@ -52,4 +52,43 @@ public class Cliente {
         var idade = anoAtual - dataNascimento.getYear();
         return idade;
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoCliente dados) {
+        if (dados.nomeCompleto() != null) {
+            this.nomeCompleto = dados.nomeCompleto();
+        }
+        if (dados.dataNascimento() != null){
+            this.dataNascimento = dados.dataNascimento();
+            this.idade = calculaIdade(dados.dataNascimento());
+        }
+        if (dados.idade() != 0){
+            this.idade = dados.idade();
+            var anoNascimentoCorreta = LocalDate.now().getYear() - dados.idade();
+            this.dataNascimento = getDataNascimento().withYear(anoNascimentoCorreta);
+        }
+        if (dados.cpf() != null) {
+            this.cpf = dados.cpf();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if (dados.email() != null) {
+            this.email = dados.email();
+        }
+        if (dados.sexo() != null) {
+            this.sexo = dados.sexo();
+        }
+        if (dados.estadoCivil() != null) {
+            this.estadoCivil = dados.estadoCivil();
+        }
+        if (dados.profissao() != null) {
+            this.profissao = dados.profissao();
+        }
+        if (dados.nacionalidade() != null) {
+            this.nacionalidade = dados.nacionalidade();
+        }
+        if (dados.endereco() != null) {
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
+    }
 }
