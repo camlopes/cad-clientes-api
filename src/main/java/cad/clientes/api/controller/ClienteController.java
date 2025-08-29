@@ -4,6 +4,9 @@ import cad.clientes.api.domain.cliente.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -38,5 +41,11 @@ public class ClienteController {
     public ResponseEntity excluir(@PathVariable Long id) {
         repository.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<Page<DadosDetalhamentoCliente>> listar(@PageableDefault(size = 10, sort = {"nomeCompleto"}) Pageable paginacao) {
+        var page = repository.findAll(paginacao).map(DadosDetalhamentoCliente::new);
+        return ResponseEntity.ok(page);
     }
 }
