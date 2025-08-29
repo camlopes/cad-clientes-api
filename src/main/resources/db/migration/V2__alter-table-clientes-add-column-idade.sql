@@ -1,0 +1,1 @@
+alter table clientes add idade varchar(3) not null;

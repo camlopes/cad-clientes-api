@@ -20,6 +20,7 @@ public class Cliente {
     private Long id;
     private String nomeCompleto;
     private LocalDate dataNascimento;
+    private int idade;
     private String cpf;
     private String telefone;
     private String email;
@@ -35,6 +36,7 @@ public class Cliente {
     public Cliente(DadosCadastroCliente dados) {
         this.nomeCompleto = dados.nomeCompleto();
         this.dataNascimento = dados.dataNascimento();
+        this.idade = calculaIdade(dados.dataNascimento());
         this.cpf = dados.cpf();
         this.telefone = dados.telefone();
         this.email = dados.email();
@@ -43,5 +45,11 @@ public class Cliente {
         this.profissao = dados.profissao();
         this.nacionalidade = dados.nacionalidade();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public int calculaIdade(LocalDate dataNascimento) {
+        var anoAtual = LocalDate.now().getYear();
+        var idade = anoAtual - dataNascimento.getYear();
+        return idade;
     }
 }
