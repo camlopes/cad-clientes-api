@@ -32,4 +32,11 @@ public class ClienteController {
         cliente.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosDetalhamentoCliente(cliente));
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity excluir(@PathVariable Long id) {
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
