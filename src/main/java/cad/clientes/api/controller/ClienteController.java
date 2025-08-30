@@ -62,9 +62,12 @@ public class ClienteController {
             @RequestParam(required = false) Sexo sexo,
             @RequestParam(required = false) EstadoCivil estadoCivil,
             @RequestParam(required = false) String profissao,
-            @RequestParam(required = false) String nacionalidade) {
+            @RequestParam(required = false) String nacionalidade,
+            @RequestParam(required = false) String cep,
+            @RequestParam(required = false) String cidade,
+            @RequestParam(required = false) String uf) {
         var page = repository.listarPorAtributos(paginacao, nomeCompleto, dataNascimento, idade, cpf, telefone, email, sexo,
-                estadoCivil, profissao, nacionalidade).map(DadosDetalhamentoCliente::new);
+                estadoCivil, profissao, nacionalidade, cep, cidade, uf).map(DadosDetalhamentoCliente::new);
         return ResponseEntity.ok(page);
     }
 }

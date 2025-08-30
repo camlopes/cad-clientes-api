@@ -20,6 +20,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             AND (:estadoCivil IS NULL OR c.estadoCivil = :estadoCivil)
             AND (:profissao IS NULL OR LOWER(c.profissao) LIKE LOWER(CONCAT('%', :profissao, '%')))
             AND (:nacionalidade IS NULL OR c.nacionalidade = :nacionalidade)
+            AND (:cep IS NULL OR c.endereco.cep = :cep)
+            AND (:cidade IS NULL OR c.endereco.cidade = :cidade)
+            AND (:uf IS NULL OR c.endereco.uf = :uf)
         """)
     Page<Cliente> listarPorAtributos(
             Pageable paginacao,
@@ -32,5 +35,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             Sexo sexo,
             EstadoCivil estadoCivil,
             String profissao,
-            String nacionalidade);
+            String nacionalidade,
+            String cep,
+            String cidade,
+            String uf);
 }
