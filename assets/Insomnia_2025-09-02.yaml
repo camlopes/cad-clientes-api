@@ -1,0 +1,287 @@
+type: collection.insomnia.rest/5.0
+name: API Cad.Clientes
+meta:
+  id: wrk_bfc161bb95984ae1bc54b54d53dd86f2
+  created: 1756402058675
+  modified: 1756402058675
+  description: ""
+collection:
+  - url: http://localhost:8080/clientes
+    name: Cadastro de Clientes
+    meta:
+      id: req_08c8bce1e45b4f64bbfa5cffd90fc97e
+      created: 1756402272933
+      modified: 1756819546195
+      isPrivate: false
+      description: ""
+      sortKey: -1756402272933
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nomeCompleto": "Bruno Pereira Carvalho Junior",
+          "dataNascimento": "2000-08-08",
+          "cpf": "333.051.258-77",
+          "telefone": "11990011223",
+          "email": "bruno.junior@gmail.com",
+          "sexo": "MASCULINO",
+          "estadoCivil": "SOLTEIRO",
+          "profissao": "Desenvolvedor de Software",
+          "nacionalidade": "Brasileira",
+          "endereco": {
+            "logradouro": "Rua Haddock Lobo",
+            "bairro": "Cerqueira César",
+            "cep": "01414000",
+            "cidade": "Rio de Janeiro",
+            "uf": "RJ",
+            "numero": "595",
+            "complemento": "Escritório 12"
+          }
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYW1pbGEubG9wZXNAZ21haWwuY29tIiwiaXNzIjoiQVBJIENhZC5jbGllbnRlcyIsImV4cCI6MTc1NjgyNjU3MX0.ySRurZg3J0IBYO2zPt7MnQOH1OcqoKdy42xAxOe3STE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/clientes
+    name: Atualizar dados de Cliente
+    meta:
+      id: req_1eefe99424e84044ae13897950500d33
+      created: 1756432563488
+      modified: 1756820065439
+      isPrivate: false
+      description: ""
+      sortKey: -1756432563488
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 35,
+          "dataNascimento": "2003-09-01"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYW1pbGEubG9wZXNAZ21haWwuY29tIiwiaXNzIjoiQVBJIENhZC5jbGllbnRlcyIsImV4cCI6MTc1NjgyNjgxMX0.0XwTr6wu0RP4lLXiLxEpqUs4vPxq70DJbTA82_fmrQI
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/clientes/9
+    name: Deletar dados de Cliente
+    meta:
+      id: req_3cc8b5d1c3bc4f9e9a80c02b88368834
+      created: 1756498802056
+      modified: 1756764790331
+      isPrivate: false
+      description: ""
+      sortKey: -1756498802056
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuc291emFAZ21haWwuY29tIiwiaXNzIjoiQVBJIENhZC5jbGllbnRlcyIsImV4cCI6MTc1Njc3MTkyMH0.ZAiFJncmeZ_Mwvg77Y20haqjAhEDXnjWJg0IRV6wz2o
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/clientes
+    name: Listagem de Clientes
+    meta:
+      id: req_6859c591c64e421e9a0a539d3f51082d
+      created: 1756499563950
+      modified: 1756768393724
+      isPrivate: false
+      description: ""
+      sortKey: -1756499563950
+    method: GET
+    parameters:
+      - id: pair_e41c5da0a8584458bc5d868f732f89cd
+        name: page
+        value: "1"
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYW1pbGEubG9wZXNAZ21haWwuY29tIiwiaXNzIjoiQVBJIENhZC5jbGllbnRlcyIsImV4cCI6MTc1Njc3NTU4NH0.cQXyC8IYDvEYUnVesvdBhAMj_XPc-xNjb9AJptthSsk
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/clientes/atributos
+    name: Listagem de Clientes por parametros
+    meta:
+      id: req_6ee714800ccd4d17b85633b3b511d841
+      created: 1756518755300
+      modified: 1756839586325
+      isPrivate: false
+      description: ""
+      sortKey: -1756499183003
+    method: GET
+    parameters:
+      - id: pair_3c0ae3b9ca224e06acf90bbbbca73f86
+        name: nomeCompleto
+        value: Fernando Silva
+        description: ""
+        disabled: true
+      - id: pair_4c6ed560c92f4689b0e06235ed713dc3
+        name: dataNascimento
+        value: 1998-08-08
+        description: ""
+        disabled: true
+      - id: pair_9e692b4e6ee1472e88306a8b91d07552
+        name: idade
+        value: "34"
+        description: ""
+        disabled: true
+      - id: pair_b315474e18d544bb9aa70c7a88c94151
+        name: cpf
+        value: 741.963.258-55
+        description: ""
+        disabled: true
+      - id: pair_9787a4190163458684473c8398ab729b
+        name: telefone
+        value: "62995556677"
+        description: ""
+        disabled: true
+      - id: pair_0aadc1dccb894e58b914e0babc476795
+        name: email
+        value: fernando.silva@gmail.com
+        description: ""
+        disabled: true
+      - id: pair_ebeb4846da0c44fb91e450143e51277e
+        name: sexo
+        value: FEMININO
+        description: ""
+        disabled: true
+      - id: pair_476f86ae73a94435b3f338685c64446e
+        name: estadoCivil
+        value: SOLTEIRO
+        description: ""
+        disabled: true
+      - id: pair_56e78fe3976043a9887f16a5cc329bcd
+        name: profissao
+        value: SOFTWARE
+        description: ""
+        disabled: true
+      - id: pair_5f4f13d4316243f583705cecbe036913
+        name: nacionalidade
+        value: Brasileira
+        description: ""
+        disabled: true
+      - id: pair_38d8117a7f5349e4821edcf8519197ca
+        name: cep
+        value: "80020010"
+        description: ""
+        disabled: true
+      - id: pair_a365335c06034fdbbe6329c4f55bdd42
+        name: cidade
+        value: Rio de Janeiro
+        description: ""
+        disabled: true
+      - id: pair_25c591e3faae47a286ada5abc439dca3
+        name: uf
+        value: RJ
+        description: ""
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuc291emFAZ21haWwuY29tIiwiaXNzIjoiQVBJIENhZC5jbGllbnRlcyIsImV4cCI6MTc1Njc3MTkyMH0.ZAiFJncmeZ_Mwvg77Y20haqjAhEDXnjWJg0IRV6wz2o
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/login
+    name: Efetuar Login
+    meta:
+      id: req_a23941e032d64ed0abc2cc77d88db29a
+      created: 1756763041713
+      modified: 1756851876146
+      isPrivate: false
+      description: ""
+      sortKey: -1756763041713
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "email": "camila.lopes@gmail.com",
+            "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d4f17ff1926bd70e70514e52f22ab996ee5befee
+    created: 1756402058702
+    modified: 1756756979758
+  cookies:
+    - key: JSESSIONID
+      value: 472865870F04586F5B6E2D2A34CE2050
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-09-01T20:02:59.758Z
+      lastAccessed: 2025-09-01T20:02:59.758Z
+      id: b3262c9b-7589-4dec-a087-f22495f4740f
+environments:
+  name: Base Environment
+  meta:
+    id: env_d4f17ff1926bd70e70514e52f22ab996ee5befee
+    created: 1756402058699
+    modified: 1756402058699
+    isPrivate: false
