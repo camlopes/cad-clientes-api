@@ -2,16 +2,14 @@ package cad.clientes.api.domain.cliente;
 
 import cad.clientes.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 
 public record DadosCadastroCliente(
         @NotBlank
         String nomeCompleto,
         @NotNull
+        @PastOrPresent
         LocalDate dataNascimento,
         @NotBlank
         @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}")
