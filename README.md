@@ -28,6 +28,10 @@
 - `POST /clientes`: Cadastro de Clientes. Pode ser acessado por um atendente sem perfil de administrador.
 - `POST /login`: Cria o token JWT para um usuário cadastrado acessar a API. Pode ser acessado por um atendente sem perfil de administrador.
 
+<p> Para realizar os testes dos endpoints da API utilize o arquivo abaixo exportando para o Insomnia. Esse arquivo possui os JSONs necessários para acessar as requisições HTTP desenvolvidas. </p>
+
+[Local com o arquivo](https://github.com/camlopes/cad-clientes-api/tree/master/assets)
+
 <h2> 🧠 Tecnologias utilizadas </h2>
 
 - Java 21 (Java SE)
