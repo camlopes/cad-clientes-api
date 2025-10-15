@@ -40,6 +40,7 @@
 - Maven
 - Lombok
 - Spring Web
+- JUnit
 - Flyway Migration
 - MySQL Driver
 - Validation
