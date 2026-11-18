@@ -1,0 +1,359 @@
+{
+  "info": {
+    "_postman_id": "08462d45-ce3f-4b55-a483-ae2ff7b28ade",
+    "name": "API Cad.Clientes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44824017"
+  },
+  "item": [
+    {
+      "name": "Cadastro de Clientes",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "disableUrlEncoding": false,
+        "followRedirects": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nomeCompleto\":\"Bruno Pereira Carvalho Junior\",\n  \"dataNascimento\": \"2000-08-08\",\n  \"cpf\": \"333.051.258-77\",\n  \"telefone\": \"11990011223\",\n  \"email\": \"bruno.junior@gmail.com\",\n  \"sexo\": \"MASCULINO\",\n  \"estadoCivil\": \"SOLTEIRO\",\n  \"profissao\": \"Desenvolvedor de Software\",\n  \"nacionalidade\": \"Brasileira\",\n  \"endereco\": {\n    \"logradouro\": \"Rua Haddock Lobo\",\n    \"bairro\": \"Cerqueira César\",\n    \"cep\": \"01414000\",\n    \"cidade\": \"Rio de Janeiro\",\n    \"uf\": \"RJ\",\n    \"numero\": \"595\",\n    \"complemento\": \"Escritório 12\"\n  }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar dados de Cliente",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "disableUrlEncoding": false,
+        "followRedirects": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 35,\n  \"dataNascimento\": \"2003-09-01\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar dados de Cliente",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "disableUrlEncoding": false,
+        "followRedirects": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/clientes/9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "clientes",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listagem de Clientes",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "disableUrlEncoding": false,
+        "followRedirects": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "clientes"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listagem de Clientes por parametros",
+      "protocolProfileBehavior": {
+        "disableCookies": false,
+        "disableUrlEncoding": false,
+        "followRedirects": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/clientes/atributos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "clientes",
+            "atributos"
+          ],
+          "query": [
+            {
+              "key": "dataNascimento",
+              "value": "1998-08-08T00:00:00.000Z",
+              "disabled": true
+            },
+            {
+              "key": "idade",
+              "value": "34",
+              "disabled": true
+            },
+            {
+              "key": "cpf",
+              "value": "741.963.258-55",
+              "disabled": true
+            },
+            {
+              "key": "telefone",
+              "value": "62995556677",
+              "disabled": true
+            },
+            {
+              "key": "email",
+              "value": "fernando.silva@gmail.com",
+              "disabled": true
+            },
+            {
+              "key": "sexo",
+              "value": "FEMININO",
+              "disabled": true
+            },
+            {
+              "key": "estadoCivil",
+              "value": "SOLTEIRO",
+              "disabled": true
+            },
+            {
+              "key": "profissao",
+              "value": "SOFTWARE",
+              "disabled": true
+            },
+            {
+              "key": "nacionalidade",
+              "value": "Brasileira",
+              "disabled": true
+            },
+            {
+              "key": "cep",
+              "value": "80020010",
+              "disabled": true
+            },
+            {
+              "key": "cidade",
+              "value": "Rio de Janeiro",
+              "disabled": true
+            },
+            {
+              "key": "uf",
+              "value": "RJ",
+              "disabled": true
+            },
+            {
+              "key": "",
+              "value": "",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Efetuar Login",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disableUrlEncoding": false,
+        "disableCookies": false
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "User-Agent",
+            "value": "insomnia/11.2.0"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"camila.lopes@gmail.com\",\n    \"senha\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_1ayj",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0ifo",
+      "secret": true
+    }
+  ]
+}
